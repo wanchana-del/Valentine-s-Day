@@ -1,0 +1,122 @@
+ @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap');
+
+        body {
+            margin: auto;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffe6e6;
+            font-family: 'Sarabun', sans-serif;
+            overflow: hidden;
+            flex-direction: column;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(255, 105, 180, 0.3);
+            position: relative;
+            z-index: 10;
+            width: 90%;
+            max-width: 400px; /* จำกัดความกว้างไม่ให้ใหญ่เกินไป */
+        }
+
+        h1 {
+            color: #ff4d6d;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        p {
+            font-size: 1.1rem;
+        }
+
+        .heart-icon {
+            font-size: 50px;
+            color: #ff4d6d;
+            animation: beat 1s infinite alternate;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            font-family: 'Sarabun', sans-serif;
+            font-weight: bold;
+        }
+
+        #yesBtn {
+            background-color: #ff4d6d;
+            color: white;
+            box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);
+        }
+
+        #yesBtn:hover {
+            background-color: #e63950;
+            transform: scale(1.1);
+        }
+
+        #noBtn {
+            background-color: #e0e0e0;
+            color: #555;
+            position: relative;
+        }
+
+        /* ปุ่มใหม่: ไปหน้า Memory (ตกแต่งให้สวยกว่า eee) */
+        #goToMemoryBtn {
+            display: none; /* ซ่อนไว้ก่อน ห้ามลบ */
+            margin-top: 30px;
+            background-color: #fff0f3;
+            color: #ff4d6d;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            border: 2px solid #ff4d6d;
+            box-shadow: 0 5px 15px rgba(255, 77, 109, 0.2);
+            animation: popUp 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            transition: all 0.3s;
+        }
+
+        #goToMemoryBtn:hover {
+            background-color: #ff4d6d;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 77, 109, 0.4);
+        }
+
+        @keyframes beat {
+            to { transform: scale(1.2); }
+        }
+
+        @keyframes popUp {
+            0% { transform: scale(0); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #ff4d6d;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(100vh) rotate(720deg); }
+        }
